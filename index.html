@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+		<!-- fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" type='text/css' href="custom.css">
+		
+		<!-- fontawesome -->
+		
+		
+		<link rel='stylesheet' type='text/css' href='css/x3dom.css'></link>
+		<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+		
+		<title>Coca Cola 3D App</title>
+	</head>
+	<!-- header -->
+	<body>
+		<nav class="navbar navbar-expand-sm navbar_coca_cola">
+			<div class="container">
+			  <div class="logo">
+					<a class="navbar-brand" href="#">
+					<h1>1oca</h1>
+					<h2>Cola</h2>
+					<h3>Journey</h3>
+					<p>Refreshing the world, one story at a time</p>
+					</a>
+				</div>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+				  <li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  Drinks
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">Coca Cola</a>
+					  <a class="dropdown-item" href="#">Sprite</a>
+					  <a class="dropdown-item" href="#">Dr Pepper</a>
+					</div>
+				  </li>
+				</ul>
+			  </div>
+		  </div>
+		</nav>
+		<br>
+		<!-- main body -->
+		<div class="container main_contents">
+			<div class="row">
+				<div class="col-sm-12" >
+					<div id="main_3d_image">
+					<div><x3d height="523px" width="600px" showProgress="false"><scene><inline id="main-viewer" nameSpaceName="main" mapDEFToID="true" url="cokebottle2.x3d"> </inline></scene></x3d></div>
+						<div id="main_text" class="col-xs-12 col-sm-4">
+							<h2>Click The Models Below</h2>
+							<h3>To change the main display here and play an animation</h3>
+							<p>The animations don't look right because I had to learn blender to get the models to export since 3dsMax wouldn't export VRML97 for me, and Blender doesn't support animation orientation or cameras from 3dsMax. I also had to modify the x3d files for this to work.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<br>
+			
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="card">
+						<div><x3d id="cokebottle" showProgress="false"><button position=fixed class="btn btn-primary" type="button" onmouseup="wireframe('cokebottle');">Wireframe </button><scene><inline nameSpaceName="cokebottle" mapDEFToID="true" onclick="changeMainViewer('cokebottle2.x3d')" url="cokebottle2.x3d"> </inline></scene></x3d></div>
+						<!--<a href="#">
+							<img class="card-img-top img-fluid img-thumbnail" src="assets/images/coca_cola.jpg" alt="Coca Cola">
+						</a>-->
+						<div class="card-body">
+							<h3 class="card-title">Coca Cola</h3>
+							<p class="card-text">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, he carried it a few doors down to Jacobs' Pharmacy. Here, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special.
+							</p>
+							<a href="#" class="btn btn-primary">Find out more </a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="card">
+						<div id="can"><x3d id="spritecan" showProgress="false"><button position=fixed class="btn btn-primary" type="button" onmouseup="wireframe('spritecan');">Wireframe </button><scene><inline nameSpaceName="spritecan" mapDEFToID="true" onclick="changeMainViewer('spritecan.x3d')" url="spritecan.x3d"> </inline></scene></x3d></div>
+						<button class="btn btn-primary" type="button" onmouseup="changeTexture();">Change Texture </button>
+						<!--<a href="#">
+							<img class="card-img-top img-fluid img-thumbnail" src="assets/images/sprite.jpg" alt="Sprite">
+						</a>-->
+						<div class="card-body">
+							<h3 class="card-title">Sprite</h3>
+							<p class="card-text">First introduced in 1961, crisp, refreshing, clean-tasting Sprite is now the world's leading lemon and lime flavoured soft drink and is sold in more than 190 different countries.
+Sprite Zero, part of our no sugar Zero range, offers the delicious lemon lime taste of Sprite without the sugar or calories. 
+</p>
+							<a href="#" class="btn btn-primary">Find out more </a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="card">
+						<div><x3d id="costacup" showProgress="false"><button position=fixed class="btn btn-primary" type="button" onmouseup="wireframe('costacup');">Wireframe </button><scene><inline nameSpaceName="costacup" mapDEFToID="true" onclick="changeMainViewer('costacup2.x3d')" url="costacup2.x3d"> </inline></scene></x3d></div>
+						<!--<a href="#">
+							<img class="card-img-top img-fluid img-thumbnail" src="assets/images/dr_pepper.jpg" alt="Dr Pepper">
+						</a>-->
+						<div class="card-body">
+							<h3 class="card-title">Dr Pepper</h3>
+							<p class="card-text">Dr Pepper's unique, sparkling blend of 23 fruit flavours has been around for well over a century and it's still the same, with that distinctive flavour you just can't quite put your tongue on.
+It was created by Texas pharmacist Charles Alderton in 1885. He gave a sample of the first ever batch to Wade Morrison, a local shop owner, and Mr Morrison instantly agreed to stock the drink. The distinctive, bold taste of Dr Pepper has been popular ever since.
+</p>
+							<a href="#" class="btn btn-primary">Find out more </a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			
+		</div>
+		<br>
+		<!-- footer-->
+		<nav class="navbar navbar-expand-sm footer">
+			<div class="container">
+				<div class="navbar-text float-left copyright">
+					<p><span class="align-baseline">&copy 2021 Mobile Web 3D Applications </span></p>
+				</div>
+				<div class="navbar-text float-right social">
+					<a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+					<a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+					<a href="#"><i class="fab fa-google-plus fa-2x"></i></a>
+					<a href="#"><i class="fab fa-github-square fa-2x"></i></a>
+				</div>
+			</div>
+		</nav>
+		
+		
+		
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="modelChange.js"></script>
+		<!--
+		<script> 
+			$(function(){
+			//window.alert("test");
+			$("#can").load("cokecan.x3d"); 
+			});
+		</script> 
+		-->
+	</body>
+</html>
